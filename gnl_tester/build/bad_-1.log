@@ -1,0 +1,37 @@
+/home/ilaakoub/get_next_line/gnl_tester/src/harness.c:817:12: warning: unused function 't_fd_neg' [-Wunused-function]
+static int      t_fd_neg(void)
+                ^
+/home/ilaakoub/get_next_line/gnl_tester/src/harness.c:822:12: warning: unused function 't_fd_big' [-Wunused-function]
+static int      t_fd_big(void)
+                ^
+/home/ilaakoub/get_next_line/gnl_tester/src/harness.c:827:12: warning: unused function 't_fd_closed' [-Wunused-function]
+static int      t_fd_closed(void)
+                ^
+/home/ilaakoub/get_next_line/gnl_tester/src/harness.c:840:12: warning: unused function 't_fd_dir' [-Wunused-function]
+static int      t_fd_dir(void)
+                ^
+/home/ilaakoub/get_next_line/gnl_tester/src/harness.c:852:12: warning: unused function 't_fd_wronly' [-Wunused-function]
+static int      t_fd_wronly(void)
+                ^
+/home/ilaakoub/get_next_line/gnl_tester/src/harness.c:866:12: warning: unused function 't_err_then_ok' [-Wunused-function]
+static int      t_err_then_ok(void)
+                ^
+/home/ilaakoub/get_next_line/gnl_tester/src/harness.c:878:12: warning: unused function 't_dir_then_ok' [-Wunused-function]
+static int      t_dir_then_ok(void)
+                ^
+/home/ilaakoub/get_next_line/gnl_tester/src/harness.c:1296:13: warning: unused function 'reg_basic' [-Wunused-function]
+static void     reg_basic(void)
+                ^
+/home/ilaakoub/get_next_line/gnl_tester/src/harness.c:1324:13: warning: unused function 'reg_boundaries' [-Wunused-function]
+static void     reg_boundaries(void)
+                ^
+/home/ilaakoub/get_next_line/gnl_tester/src/harness.c:1412:13: warning: unused function 'reg_advanced' [-Wunused-function]
+static void     reg_advanced(void)
+                ^
+/home/ilaakoub/get_next_line/gnl_tester/src/harness.c:1456:13: warning: unused function 'reg_eof' [-Wunused-function]
+static void     reg_eof(void)
+                ^
+/home/ilaakoub/get_next_line/gnl_tester/src/harness.c:1519:13: warning: unused function 'reg_memory' [-Wunused-function]
+static void     reg_memory(void)
+                ^
+12 warnings generated.

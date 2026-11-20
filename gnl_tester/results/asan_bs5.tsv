@@ -1,0 +1,134 @@
+PASS	M	0	A01	empty file	0.01	
+PASS	M	0	A02	one character, no newline	0.01	
+PASS	M	0	A03	one character + newline	0.01	
+PASS	M	0	A04	one word, no newline	0.01	
+PASS	M	0	A05	one word + newline	0.01	
+PASS	M	0	A06	one line with spaces, no newline	0.01	
+PASS	M	0	A07	one line with spaces + newline	0.01	
+PASS	M	0	A08	only a newline	0.01	
+PASS	M	0	A09	three newlines (3 empty lines)	0.01	
+PASS	M	0	A10	3 lines, all end with \n	0.01	
+PASS	M	0	A11	3 lines, the last one has no \n	0.01	
+PASS	M	0	A12	two lines 'a' / 'b' (no final newline)	0.01	
+PASS	M	0	A13	empty and non-empty lines mixed	0.01	
+PASS	M	0	A14	leading empty lines	0.01	
+PASS	M	0	A15	trailing empty lines	0.01	
+PASS	M	0	A16	empty first line, last line without \n	0.01	
+PASS	M	0	A17	10 consecutive newlines between two lines	0.01	
+PASS	M	0	A18	1000 short lines (2 chars each)	0.01	
+PASS	M	1	B01	1 line of BS-2=3 chars + \n	0.01	
+PASS	M	1	B02	1 line of BS-2=3 chars, no \n	0.01	
+PASS	M	1	B03	3 lines of BS-2=3 chars, all with \n	0.01	
+PASS	M	1	B04	3 lines of BS-2=3 chars, last without \n	0.01	
+PASS	M	1	B05	1 line of BS-1=4 chars + \n	0.01	
+PASS	M	1	B06	1 line of BS-1=4 chars, no \n	0.01	
+PASS	M	1	B07	3 lines of BS-1=4 chars, all with \n	0.01	
+PASS	M	1	B08	3 lines of BS-1=4 chars, last without \n	0.01	
+PASS	M	1	B09	1 line of BS=5 chars + \n	0.01	
+PASS	M	1	B10	1 line of BS=5 chars, no \n	0.01	
+PASS	M	1	B11	3 lines of BS=5 chars, all with \n	0.01	
+PASS	M	1	B12	3 lines of BS=5 chars, last without \n	0.01	
+PASS	M	1	B13	1 line of BS+1=6 chars + \n	0.01	
+PASS	M	1	B14	1 line of BS+1=6 chars, no \n	0.01	
+PASS	M	1	B15	3 lines of BS+1=6 chars, all with \n	0.01	
+PASS	M	1	B16	3 lines of BS+1=6 chars, last without \n	0.01	
+PASS	M	1	B17	1 line of 2BS-1=9 chars + \n	0.01	
+PASS	M	1	B18	1 line of 2BS-1=9 chars, no \n	0.01	
+PASS	M	1	B19	3 lines of 2BS-1=9 chars, all with \n	0.01	
+PASS	M	1	B20	3 lines of 2BS-1=9 chars, last without \n	0.01	
+PASS	M	1	B21	1 line of 2BS=10 chars + \n	0.01	
+PASS	M	1	B22	1 line of 2BS=10 chars, no \n	0.01	
+PASS	M	1	B23	3 lines of 2BS=10 chars, all with \n	0.01	
+PASS	M	1	B24	3 lines of 2BS=10 chars, last without \n	0.01	
+PASS	M	1	B25	1 line of 2BS+1=11 chars + \n	0.01	
+PASS	M	1	B26	1 line of 2BS+1=11 chars, no \n	0.01	
+PASS	M	1	B27	3 lines of 2BS+1=11 chars, all with \n	0.01	
+PASS	M	1	B28	3 lines of 2BS+1=11 chars, last without \n	0.01	
+PASS	M	1	B29	1 line of 3BS=15 chars + \n	0.01	
+PASS	M	1	B30	1 line of 3BS=15 chars, no \n	0.01	
+PASS	M	1	B31	3 lines of 3BS=15 chars, all with \n	0.01	
+PASS	M	1	B32	3 lines of 3BS=15 chars, last without \n	0.01	
+PASS	M	1	B33	4 newlines in a row (BS-1)	0.01	
+PASS	M	1	B34	5 newlines in a row (BS)	0.01	
+PASS	M	1	B35	6 newlines in a row (BS+1)	0.01	
+PASS	M	1	B36	16 newlines in a row (3BS+1)	0.01	
+PASS	M	1	B37	40 lines cycling BS-1, BS, BS+1, 0, 1, 2BS, 2BS+1, BS-2	0.01	
+PASS	M	1	B38	same cycling lines, last one without \n	0.01	
+PASS	M	1	B39	line lengths 0,1,2,... up to 18 (every offset vs a read)	0.01	
+PASS	M	1	B40	line lengths descending to 0, last without \n	0.01	
+PASS	M	1	B41	200 one-char lines (many \n per read)	0.01	
+PASS	M	1	B42	60 lines of 7 chars (several per read)	0.01	
+PASS	M	1	B43	60 lines of 7 chars, last without \n	0.01	
+PASS	M	1	B44	fuzz #1: 200 random-length lines	0.01	
+PASS	M	1	B45	fuzz #2: 200 random-length lines, last without \n	0.01	
+PASS	M	1	B46	fuzz #3: 200 random-length lines	0.01	
+PASS	M	1	B47	fuzz #4: 200 random-length lines, last without \n	0.01	
+PASS	M	1	B48	fuzz #5: 200 random-length lines	0.01	
+PASS	M	1	B49	fuzz #6: 200 random-length lines, last without \n	0.01	
+PASS	M	1	B50	fuzz #7: 200 random-length lines	0.01	
+PASS	M	1	B51	fuzz #8: 200 random-length lines, last without \n	0.01	
+PASS	M	1	B52	partial reads: 12 lines of 9 chars	0.01	
+PASS	M	1	B53	partial reads: last line without \n	0.01	
+PASS	M	1	B54	partial reads: one 3000-char line	0.05	
+PASS	M	1	B55	partial reads: 150 random lines	0.01	
+PASS	M	1	B56	partial reads: fuzz, last without \n	0.01	
+PASS	M	1	B57	partial reads: 300 newlines	0.01	
+PASS	M	2	C01	one 10 KB line + \n	0.29	
+PASS	M	2	C02	one 10 KB line, no \n	0.28	
+PASS	M	2	C03	one 50000-char line + \n	6.63	
+PASS	M	2	C04	one 50000-char line, no \n	6.68	
+PASS	M	2	C05	5000 lines of random length 0..40	0.07	
+PASS	M	2	C06	5000 random lines, last without \n	0.07	
+PASS	M	2	C07	10000 empty lines	0.03	
+PASS	M	2	C08	10000 one-char lines	0.04	
+PASS	M	2	C09	spaces and tabs	0.01	
+PASS	M	2	C10	numbers and special characters	0.01	
+PASS	M	2	C11	lines containing only spaces	0.01	
+PASS	M	2	C12	only spaces, no newline	0.01	
+PASS	M	2	C13	short lines mixed with 15000 and 30000-char lines	3.00	
+PASS	M	2	C14	32 KB file without any newline	2.75	
+PASS	M	2	C15	file ending with several newlines	0.01	
+PASS	M	2	C16	3000 times 'a' + \n	0.03	
+PASS	M	2	C17	3000 times 'a', no \n	0.03	
+PASS	M	2	C18	100 x (3-char line, 300-char line)	0.04	
+PASS	M	2	C19	UTF-8 / high bytes (bytes > 127, no NUL)	0.01	
+PASS	M	2	C20	CRLF: only '\n' ends a line, '\r' stays in the line	0.01	
+PASS	M	2	C21	three identical lines	0.01	
+PASS	M	3	D01	empty file: 10 calls in a row -> NULL	0.01	
+PASS	M	3	D02	3 lines + \n: then 100 calls -> NULL	0.01	
+PASS	M	3	D03	last line without \n returned once, then 100 x NULL	0.01	
+PASS	M	3	D04	last line without \n is not returned twice	0.01	
+PASS	M	3	D05	EOF right after a single line + \n	0.01	
+PASS	M	3	D06	file size = 2*BS (read returns exactly full buffers, then 0), no \n	0.01	
+PASS	M	3	D07	file size = 2*BS ending with \n on the very last byte	0.01	
+PASS	M	3	D08	all lines arrive in one buffer: leftovers in save	0.01	
+PASS	M	3	D09	re-open the same file after EOF and read it again	0.01	
+PASS	M	3	D10	re-open (file without final \n) and read it again	0.01	
+PASS	M	3	D11	4 different files read one after another (to EOF each)	0.01	
+PASS	M	3	D12	only spaces, no newline, then EOF	0.01	
+PASS	M	4	E01	fd = -1	0.01	
+PASS	M	4	E02	fd = 9999 (never opened)	0.01	
+PASS	M	4	E03	closed fd	0.01	
+PASS	M	4	E04	fd of a directory (read fails: EISDIR)	0.01	
+PASS	M	4	E05	fd opened write-only (read fails: EBADF)	0.01	
+PASS	M	4	E06	errors (fd -1, 9999) then a valid file works	0.01	
+PASS	M	4	E07	read error on a directory, then a valid file works	0.01	
+PASS	M	4	E08	stdin (fd 0) through a pipe: 5 lines	0.01	
+PASS	M	4	E09	stdin: tiny writes, last line without \n	0.01	
+PASS	M	4	E10	stdin: one 3000-char line, tiny writes	0.10	
+PASS	M	4	E11	stdin: closed immediately (empty input)	0.01	
+PASS	M	4	E12	pipe fd with partial reads: 40 random lines	0.03	
+PASS	M	5	F01	leak check: one line + \n	0.01	
+PASS	M	5	F02	leak check: one line, no \n	0.01	
+PASS	M	5	F03	leak check: empty file	0.01	
+PASS	M	5	F04	leak check: 2000 lines (a leak per call shows up here)	0.02	
+PASS	M	5	F05	leak check: one 2500-char line built from many reads	0.03	
+PASS	M	5	F06	leak check: the same small file read 20 times in a row	0.01	
+PASS	M	5	F07	leak check: 500 empty lines	0.01	
+PASS	R	5	F08	malloc() fails: 3 short lines	0.10	
+PASS	R	5	F09	malloc() fails: last line without \n	0.08	
+PASS	R	5	F10	malloc() fails: one line spanning several reads	0.07	
+PASS	R	5	F11	malloc() fails: 12 random lines	0.36	
+PASS	R	5	F12	read() fails (-1): 3 short lines	0.08	
+PASS	R	5	F13	read() fails (-1): one line spanning several reads	0.07	
+PASS	R	5	F14	read() fails (-1): last line without \n	0.07	

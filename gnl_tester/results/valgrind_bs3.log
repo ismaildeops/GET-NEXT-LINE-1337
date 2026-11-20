@@ -1,0 +1,140 @@
+==== get_next_line tester | BUFFER_SIZE=3 | level=0 ====
+PASS    [M] A01 empty file
+PASS    [M] A02 one character, no newline
+PASS    [M] A03 one character + newline
+PASS    [M] A04 one word, no newline
+PASS    [M] A05 one word + newline
+PASS    [M] A06 one line with spaces, no newline
+PASS    [M] A07 one line with spaces + newline
+PASS    [M] A08 only a newline
+PASS    [M] A09 three newlines (3 empty lines)
+PASS    [M] A10 3 lines, all end with \n
+PASS    [M] A11 3 lines, the last one has no \n
+PASS    [M] A12 two lines 'a' / 'b' (no final newline)
+PASS    [M] A13 empty and non-empty lines mixed
+PASS    [M] A14 leading empty lines
+PASS    [M] A15 trailing empty lines
+PASS    [M] A16 empty first line, last line without \n
+PASS    [M] A17 10 consecutive newlines between two lines
+PASS    [M] A18 1000 short lines (2 chars each)
+PASS    [M] B01 1 line of BS-2=1 chars + \n
+PASS    [M] B02 1 line of BS-2=1 chars, no \n
+PASS    [M] B03 3 lines of BS-2=1 chars, all with \n
+PASS    [M] B04 3 lines of BS-2=1 chars, last without \n
+PASS    [M] B05 1 line of BS-1=2 chars + \n
+PASS    [M] B06 1 line of BS-1=2 chars, no \n
+PASS    [M] B07 3 lines of BS-1=2 chars, all with \n
+PASS    [M] B08 3 lines of BS-1=2 chars, last without \n
+PASS    [M] B09 1 line of BS=3 chars + \n
+PASS    [M] B10 1 line of BS=3 chars, no \n
+PASS    [M] B11 3 lines of BS=3 chars, all with \n
+PASS    [M] B12 3 lines of BS=3 chars, last without \n
+PASS    [M] B13 1 line of BS+1=4 chars + \n
+PASS    [M] B14 1 line of BS+1=4 chars, no \n
+PASS    [M] B15 3 lines of BS+1=4 chars, all with \n
+PASS    [M] B16 3 lines of BS+1=4 chars, last without \n
+PASS    [M] B17 1 line of 2BS-1=5 chars + \n
+PASS    [M] B18 1 line of 2BS-1=5 chars, no \n
+PASS    [M] B19 3 lines of 2BS-1=5 chars, all with \n
+PASS    [M] B20 3 lines of 2BS-1=5 chars, last without \n
+PASS    [M] B21 1 line of 2BS=6 chars + \n
+PASS    [M] B22 1 line of 2BS=6 chars, no \n
+PASS    [M] B23 3 lines of 2BS=6 chars, all with \n
+PASS    [M] B24 3 lines of 2BS=6 chars, last without \n
+PASS    [M] B25 1 line of 2BS+1=7 chars + \n
+PASS    [M] B26 1 line of 2BS+1=7 chars, no \n
+PASS    [M] B27 3 lines of 2BS+1=7 chars, all with \n
+PASS    [M] B28 3 lines of 2BS+1=7 chars, last without \n
+PASS    [M] B29 1 line of 3BS=9 chars + \n
+PASS    [M] B30 1 line of 3BS=9 chars, no \n
+PASS    [M] B31 3 lines of 3BS=9 chars, all with \n
+PASS    [M] B32 3 lines of 3BS=9 chars, last without \n
+PASS    [M] B33 2 newlines in a row (BS-1)
+PASS    [M] B34 3 newlines in a row (BS)
+PASS    [M] B35 4 newlines in a row (BS+1)
+PASS    [M] B36 10 newlines in a row (3BS+1)
+PASS    [M] B37 40 lines cycling BS-1, BS, BS+1, 0, 1, 2BS, 2BS+1, BS-2
+PASS    [M] B38 same cycling lines, last one without \n
+PASS    [M] B39 line lengths 0,1,2,... up to 12 (every offset vs a read)
+PASS    [M] B40 line lengths descending to 0, last without \n
+PASS    [M] B41 200 one-char lines (many \n per read)
+PASS    [M] B42 60 lines of 7 chars (several per read)
+PASS    [M] B43 60 lines of 7 chars, last without \n
+PASS    [M] B44 fuzz #1: 200 random-length lines
+PASS    [M] B45 fuzz #2: 200 random-length lines, last without \n
+PASS    [M] B46 fuzz #3: 200 random-length lines
+PASS    [M] B47 fuzz #4: 200 random-length lines, last without \n
+PASS    [M] B48 fuzz #5: 200 random-length lines
+PASS    [M] B49 fuzz #6: 200 random-length lines, last without \n
+PASS    [M] B50 fuzz #7: 200 random-length lines
+PASS    [M] B51 fuzz #8: 200 random-length lines, last without \n
+PASS    [M] B52 partial reads: 12 lines of 9 chars
+PASS    [M] B53 partial reads: last line without \n
+PASS    [M] B54 partial reads: one 3000-char line
+PASS    [M] B55 partial reads: 150 random lines
+PASS    [M] B56 partial reads: fuzz, last without \n
+PASS    [M] B57 partial reads: 300 newlines
+PASS    [M] C01 one 10 KB line + \n  (2.7s)
+PASS    [M] C02 one 10 KB line, no \n  (2.7s)
+PASS    [M] C05 5000 lines of random length 0..40
+PASS    [M] C06 5000 random lines, last without \n
+PASS    [M] C07 10000 empty lines
+PASS    [M] C08 10000 one-char lines
+PASS    [M] C09 spaces and tabs
+PASS    [M] C10 numbers and special characters
+PASS    [M] C11 lines containing only spaces
+PASS    [M] C12 only spaces, no newline
+PASS    [M] C13 short lines mixed with 15000 and 30000-char lines  (28.4s)
+PASS    [M] C14 32 KB file without any newline  (25.8s)
+PASS    [M] C15 file ending with several newlines
+PASS    [M] C16 3000 times 'a' + \n
+PASS    [M] C17 3000 times 'a', no \n
+PASS    [M] C18 100 x (3-char line, 300-char line)
+PASS    [M] C19 UTF-8 / high bytes (bytes > 127, no NUL)
+PASS    [M] C20 CRLF: only '\n' ends a line, '\r' stays in the line
+PASS    [M] C21 three identical lines
+PASS    [M] D01 empty file: 10 calls in a row -> NULL
+PASS    [M] D02 3 lines + \n: then 100 calls -> NULL
+PASS    [M] D03 last line without \n returned once, then 100 x NULL
+PASS    [M] D04 last line without \n is not returned twice
+PASS    [M] D05 EOF right after a single line + \n
+PASS    [M] D06 file size = 2*BS (read returns exactly full buffers, then 0), no \n
+PASS    [M] D07 file size = 2*BS ending with \n on the very last byte
+PASS    [M] D08 all lines arrive in one buffer: leftovers in save
+PASS    [M] D09 re-open the same file after EOF and read it again
+PASS    [M] D10 re-open (file without final \n) and read it again
+PASS    [M] D11 4 different files read one after another (to EOF each)
+PASS    [M] D12 only spaces, no newline, then EOF
+PASS    [M] E01 fd = -1
+PASS    [M] E02 fd = 9999 (never opened)
+PASS    [M] E03 closed fd
+PASS    [M] E04 fd of a directory (read fails: EISDIR)
+PASS    [M] E05 fd opened write-only (read fails: EBADF)
+PASS    [M] E06 errors (fd -1, 9999) then a valid file works
+PASS    [M] E07 read error on a directory, then a valid file works
+PASS    [M] E08 stdin (fd 0) through a pipe: 5 lines
+PASS    [M] E09 stdin: tiny writes, last line without \n
+PASS    [M] E10 stdin: one 3000-char line, tiny writes
+PASS    [M] E11 stdin: closed immediately (empty input)
+PASS    [M] E12 pipe fd with partial reads: 40 random lines
+PASS    [M] F01 leak check: one line + \n
+PASS    [M] F02 leak check: one line, no \n
+PASS    [M] F03 leak check: empty file
+PASS    [M] F04 leak check: 2000 lines (a leak per call shows up here)
+PASS    [M] F05 leak check: one 2500-char line built from many reads
+PASS    [M] F06 leak check: the same small file read 20 times in a row
+PASS    [M] F07 leak check: 500 empty lines
+PASS    [R] F08 malloc() fails: 3 short lines
+PASS    [R] F09 malloc() fails: last line without \n
+PASS    [R] F10 malloc() fails: one line spanning several reads
+PASS    [R] F11 malloc() fails: 12 random lines  (3.2s)
+PASS    [R] F12 read() fails (-1): 3 short lines
+PASS    [R] F13 read() fails (-1): one line spanning several reads
+PASS    [R] F14 read() fails (-1): last line without \n
+---- summary (BUFFER_SIZE=3): 132 run, 132 passed, 0 failed (0 mandatory), 2 skipped by level ----
+     Basic functionality                   18 tests   18 passed    0 failed
+     Buffer boundaries                     57 tests   57 passed    0 failed
+     Advanced content                      19 tests   19 passed    0 failed
+     EOF behavior                          12 tests   12 passed    0 failed
+     File descriptor and error handling    12 tests   12 passed    0 failed
+     Memory management                     14 tests   14 passed    0 failed

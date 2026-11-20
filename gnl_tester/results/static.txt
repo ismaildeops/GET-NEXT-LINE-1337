@@ -1,0 +1,8 @@
+  [32mPASS[0m  get_next_line.c compiles WITHOUT -D BUFFER_SIZE (-Wall -Wextra -Werror)
+  [32mPASS[0m  get_next_line_utils.c compiles WITHOUT -D BUFFER_SIZE (-Wall -Wextra -Werror)
+  [32mPASS[0m  header has include guards and works when included twice
+  [32mPASS[0m  compiles with -D BUFFER_SIZE=42 (-Wall -Wextra -Werror)
+  [32mPASS[0m  no libft include
+  [32mPASS[0m  only read/malloc/free are used (nm -u)
+  [32mPASS[0m  no global variable (nm: only 'static' data)
+  [32mPASS[0m  norminette (informational)

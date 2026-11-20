@@ -1,0 +1,20 @@
+
+| Category | Tests | Passed | Failed |
+|---|---:|---:|---:|
+| Basic functionality | 270 | 270 | 0 |
+| Buffer boundaries | 797 | 797 | 0 |
+| Advanced content | 315 | 315 | 0 |
+| EOF behavior | 180 | 180 | 0 |
+| File descriptor and error handling | 186 | 186 | 0 |
+| Memory management | 210 | 210 | 0 |
+| Helper functions | - | - | - |   (template: src/helpers_test.c - see README)
+| **Total** | 1958 | 1958 | 0 |
+
+(a "test" = one test id at one BUFFER_SIZE; it counts as failed if it failed in ANY run: plain / asan / valgrind)
+
+[32mNo failing test.[0m
+
+[1mMemory tools:[0m findings (sanitizer/valgrind errors, crashes, [MEM] leaks) per run type:  none
+
+Distinct failing tests: 0 mandatory, 0 robustness-only.  Static-check failures: 0
+[32mNo mandatory failure detected in the configurations that were executed.[0m (This is evidence, not proof - see README for what the suite cannot cover.)
