@@ -49,8 +49,8 @@ static char	*read_to_save(int fd, char *save)
 static char	*extract_line(char *save)
 {
 	char	*line;
-	size_t	i;
-	size_t	len;
+	int	i;
+	int	len;
 
 	len = 0;
 	while (save[len] && save[len] != '\n')
@@ -70,11 +70,11 @@ static char	*extract_line(char *save)
 	return (line);
 }
 
-static char	*update_save(char *save, size_t i)
+static char	*update_save(char *save, int i)
 {
 	char	*new_save;
-	size_t	save_len;
-	size_t	j;
+	int		save_len;
+	int		j;
 
 	save_len = ft_strlen(save);
 	new_save = malloc(save_len - i + 1);
@@ -97,7 +97,7 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	if (BUFFER_SIZE <= 0 || fd < 0 || read(fd, NULL, 0) == -1)
-		return (NULL);
+		return (ft_free(&save));
 	save = read_to_save(fd, save);
 	if (!save || save[0] == '\0')
 		return (ft_free(&save));

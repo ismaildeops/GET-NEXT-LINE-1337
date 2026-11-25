@@ -4,80 +4,54 @@
 
 ## Description
 
-**Goal:** write a function `get_next_line(int fd)` that reads a file descriptor
-and returns **one line at a time**, including the `\n` at the end (if there is one).
-It returns `NULL` when there is nothing more to read, or when an error happens.
+**Goal:** Write a function `get_next_line(int fd)` that reads a file descriptor and returns **one line at a time**, including the trailing `\n` (if present). It returns `NULL` when there is nothing left to read or when an error occurs.
 
-**Overview:** the function reads the file in small blocks of `BUFFER_SIZE` bytes
-with `read()`. A block can contain half a line, one line, or many lines, so the
-function must remember what it has already read between two calls. To do this,
-it uses a **static variable**, which keeps its value between calls.
+**Overview:** Because `read()` processes files in fixed chunks of `BUFFER_SIZE` bytes, a single read may capture part of a line, one full line, or multiple lines. To remember leftover text between function calls, `get_next_line` uses a **`static` variable** (`save`), which preserves its value after the function returns.
 
-### How it works
+### How It Works
 
-Variables used:
-
-- `save` : static string. It keeps the text that was read but not returned yet.
-- `buffer` : temporary memory that receives the new data from `read()`.
-- `bytes_read` : the number of bytes that `read()` returned.
-- `line` : the line that we return to the caller.
-
-Steps of each call:
-
-1. Check the arguments (`BUFFER_SIZE`, `fd`) and allocate `buffer`.
-2. While `save` has no `\n`: call `read()`, then join the new data to `save`.
-   Stop if `read()` returns `0` (end of file) or `-1` (error).
-3. Copy from `save` into a new string `line`, up to and including the first `\n`.
-4. Create a new string with what is left after the `\n`. This becomes the new
-   `save`, and the old `save` is freed.
-5. At the end of the file or on error: free `save`, set it to `NULL`, return `NULL`.
-
-All memory allocated with `malloc` is freed on every path (no memory leaks).
+1. **Validate & Read:** Check `fd` and `BUFFER_SIZE`. While `save` does not contain a `\n`, read chunks into `buffer` and append them to `save` until a `\n` is found, EOF (`0`) is reached, or an error (`-1`) occurs.
+2. **Extract Line:** Allocate and copy characters from `save` up to and including the first `\n` into `line`.
+3. **Update Remainder:** Store any remaining characters after `\n` in a newly allocated `save` string, and free the old `save`.
+4. **Cleanup:** Return `line`. When EOF or an error is reached, free `save`, set it to `NULL`, and return `NULL`.
 
 ## Instructions
 
-Files: `get_next_line.c`, `get_next_line_utils.c`, `get_next_line.h`.
+### Project Files
+* `get_next_line.c`
+* `get_next_line_utils.c`
+* `get_next_line.h`
 
-**Compilation:** `BUFFER_SIZE` can be chosen at compile time with `-D`.
+### Compilation
+Compile your `main.c` with the project files and define `BUFFER_SIZE` using `-D`:
 
+```bash
+cc -Wall -Wextra -Werror -D BUFFER_SIZE=5 get_next_line.c get_next_line_utils.c main.c -o program
 ```
-cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 get_next_line.c get_next_line_utils.c main.c -o gnl
-```
 
-**Usage:** include `get_next_line.h`, open a file to get a `fd`, and call
-`get_next_line(fd)` in a loop until it returns `NULL`.
-The caller must `free()` every line that is returned.
+### Usage & Execution
+Include `"get_next_line.h"`, open a file descriptor, and call `get_next_line(fd)` in a loop until it returns `NULL`. Remember to `free()` each returned line in the caller.
 
-**Execution:**
-
-```
+```bash
 ./gnl file.txt
 ```
 
-**Test for leaks:**
+### Checking for Memory Leaks
+Compile with `-g` and run Valgrind (Memcheck) to verify there are no leaks or invalid memory accesses:
 
-```
-valgrind --leak-check=full ./gnl file.txt
+```bash
+cc -Wall -Wextra -Werror -g -D BUFFER_SIZE=5 get_next_line.c get_next_line_utils.c main.c -o gnl
+valgrind --leak-check=full ./program file.txt
 ```
 
 ## Resources
 
-- `man 2 read`, `man 2 open`, `man 3 malloc`, `man 3 free`
-- Valgrind documentation: https://valgrind.org/docs/manual/quick-start.html
-- The get_next_line subject (42 curriculum)
+* **Manuals:** `man 2 read`, `man 2 open`, `man 3 malloc`, `man 3 free`
+* **Documentation:** [Valgrind Quick Start Guide](https://valgrind.org/docs/manual/quick-start.html)
+* **42 Curriculum:** `get_next_line` project subject
 
-**Use of AI:** I used AI (Claude) as a tutor, not to write the project code.
-It was used for:
-
-- explaining ideas (static variables, how `read()` works, who owns and frees memory),
-- reviewing my code and pointing out problems (missing `'\0'`, memory leaks,
-  dangling pointer), so that I could fix them myself,
-- suggesting a small `main.c` and valgrind commands to test the function,
-- helping to write this README.
-
-I wrote the code of `get_next_line` myself and I can explain every line of it.
-
-### HOW CODE WORKS
-1. Goal of get_next_line is read a file and return one line on every call, and save other lines 
-2. we call save as a static because we want to its value after the function end.
-3. while (!has_newline(save)). 
+### Use of AI
+AI tools were used strictly as a learning aid—not to generate project code:
+* **Concepts:** Clarifying `static` variable lifetimes, `read()` behavior, and memory ownership.
+* **Debugging & Review:** Identifying edge-case memory leaks and missing null-terminators so I could fix them myself.
+* **Testing & Documentation:** Suggesting `main.c` test cases, Valgrind flags, and helping structure this `README.md`.

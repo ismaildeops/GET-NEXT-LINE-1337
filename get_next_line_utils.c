@@ -14,7 +14,7 @@
 
 int	has_newline(char *str)
 {
-	size_t	i;
+	int	i;
 
 	if (!str)
 		return (0);
@@ -28,21 +28,24 @@ int	has_newline(char *str)
 	return (0);
 }
 
-size_t	ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-	size_t	i;
+	int	i;
 
+	if (!str)
+		return (0);
 	i = 0;
 	while (str[i])
 		i++;
 	return (i);
 }
 
-size_t	ft_strlcat(char *dst, char *src, size_t size)
+
+int	ft_strlcat(char *dst, char *src, int size)
 {
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	i;
+	int	dst_len;
+	int	src_len;
+	int	i;
 
 	dst_len = 0;
 	while (dst_len < size && dst[dst_len])
@@ -62,8 +65,8 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 
 char	*ft_strjoin(char *s1, char *s2)
 {
-	size_t	len_s1;
-	size_t	len_s2;
+	int	len_s1;
+	int	len_s2;
 	char	*r;
 
 	if (!s1)
